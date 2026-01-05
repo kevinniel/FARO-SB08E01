@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
+    "start:test": "DOTENV_CONFIG_PATH=.env.test NODE_ENV=test node server.js",
     "dev": "node --watch server.js",
     "db:create": "node src/migrations/createTables.js",
     "db:create:test": "DOTENV_CONFIG_PATH=.env.test node src/migrations/createTables.js",
     "test": "npm run test:unit && npm run test:spec",
     "test:unit": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=unit.test",
-    "test:spec": "DOTENV_CONFIG_PATH=.env.test NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=spec.test  --setupFilesAfterEnv=./src/config/setup-jest.js"
+    "test:spec": "DOTENV_CONFIG_PATH=.env.test NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=spec.test  --setupFilesAfterEnv=./src/config/setup-jest.js",
+    "test:e2e": "export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox && DOTENV_CONFIG_PATH=.env.test NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=e2e.test --setupFilesAfterEnv=./src/config/setup-jest.js"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +27,11 @@
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.7"
   },
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
   "devDependencies": {
-    "jest": "^30.2.0"
+    "jest": "^30.2.0",
+    "jest-puppeteer": "^11.0.0"
   }
 }

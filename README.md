@@ -15,6 +15,7 @@ Voici le dépôt d'un projet `Express`, `Sequelize`, `PostgreSQL` (pour les tech
 ## Liens utiles 
 - `Github actions doc` : https://github.com/features/actions
 - `Jest doc` : https://jestjs.io/docs/next/using-matchers
+- `Jest Puppeteer` : https://pptr.dev/
 
 ## Test Github Actions
 

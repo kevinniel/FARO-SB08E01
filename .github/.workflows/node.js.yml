@@ -1,0 +1,33 @@
+# On peut déclarer des tâches à réaliser automatiquement
+
+# nom de la tâche
+name: Node.js CI
+
+# quand se déclenche la tâche ?
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+# les tâches à réaliser
+jobs:
+  # construire et tester le projet
+  build:
+    # on utilise un système Ubuntu
+    runs-on: ubuntu-latest
+    # nom de la tâche
+    name: Test
+
+    # étapes
+    steps:
+      # on récupère le code du projet
+      - uses: actions/checkout@v4
+      # on utilise Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # on installe les dépendances
+      - run: npm ci
+      # on lance les tests unitaires
+      - run: npm run test:unit

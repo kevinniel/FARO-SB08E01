@@ -8,7 +8,7 @@
     "dev": "node --watch server.js",
     "db:create": "node src/migrations/createTables.js",
     "db:create:test": "DOTENV_CONFIG_PATH=.env.test node src/migrations/createTables.js",
-    "test": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "npm run test:unit && npm run test:spec",
     "test:unit": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=unit.test",
     "test:spec": "DOTENV_CONFIG_PATH=.env.test NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --testPathPatterns=spec.test  --setupFilesAfterEnv=./src/config/setup-jest.js"
   },

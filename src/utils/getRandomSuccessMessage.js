@@ -10,7 +10,6 @@ export const funnyMessages = [
 ];
 
 export const getRandomSuccessMessage = () => {
-    
     const randomIndex = Math.floor(Math.random() * funnyMessages.length);
     return funnyMessages[randomIndex];
 };

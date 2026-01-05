@@ -15,3 +15,4 @@ Voici le dépôt d'un projet `Express`, `Sequelize`, `PostgreSQL` (pour les tech
 ## Test Github Actions
 
 Je met une nouvelle ligne pour vérifier que les tests se déclenchent bien.
+Test n°2

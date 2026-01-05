@@ -6,9 +6,9 @@ name: Node.js CI
 # quand se déclenche la tâche ?
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 # les tâches à réaliser
 jobs:

@@ -12,3 +12,6 @@ Voici le dépôt d'un projet `Express`, `Sequelize`, `PostgreSQL` (pour les tech
 4. lancer le script `npm run db:create`
 5. lancer le server de dev avec `npm run dev`
 
+## Test Github Actions
+
+Je met une nouvelle ligne pour vérifier que les tests se déclenchent bien.

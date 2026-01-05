@@ -1,0 +1,18 @@
+<!-- si j'ai bien un message flash -->
+<% if (typeof flash !== "undefined" && flash.message) { %>
+    <div class="notification is-<%=flash.type%>">
+        <button class="delete"></button>
+        <!-- si mon message est un tableau je boucle pour afficher avec un br -->
+        <% if (Array.isArray(flash.message)) { %>
+            <!-- ejs forof -->
+            <% for (let message of flash.message) { %>
+                <%= message %> <br />
+            <% } %>
+            <!-- sinon j'affiche directement -->
+        <% }else { %>
+
+            <%= flash.message %>
+
+        <% } %>
+    </div>
+<% } %>

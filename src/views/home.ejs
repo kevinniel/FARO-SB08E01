@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Le livre d-o-r</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css" />
+        <script type="module" src="/js/flashMessage.js"></script>
+    </head>
+    <body>
+        <h1 class="title is-1 has-text-centered mt-5">Le livre d'O'r</h1>
+        <div class="container">
+            <%- include('./partials/flash-message.ejs') %>
+            <form action="/message" method="post" class="box">
+                <div class="field">
+                    <label class="label" for="name">Nom</label>
+                    <div class="control">
+                        <input required="true" class="input" type="text" placeholder="Nom" name="name" id="name" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="firstname">Prénom</label>
+                    <div class="control">
+                        <input
+                            required="true"
+                            class="input"
+                            type="text"
+                            placeholder="Prénom"
+                            name="firstname"
+                            id="firstname"
+                        />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="email">E-mail</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="E-mail" name="email" id="email" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="content">Message</label>
+                    <div class="control">
+                        <textarea
+                            required="true"
+                            class="textarea"
+                            placeholder="Votre doux message ..."
+                            id="content"
+                            name="content"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="control">
+                    <button class="button is-link">Envoyer</button>
+                </div>
+            </form>
+
+        </div>
+    </body>
+</html>

@@ -14,12 +14,14 @@ export const handleForm = async (req, res) => {
         // je redirige l'utilisateur vers la page d'accueil
         res.status(201).redirect("/");
     } catch (err) {
-        // j'ajoute tous les messages d'erreurs dans un tableau
         let messages = [];
-        for (const error of err.errors) {
-            messages.push(error.message);
+
+        if (err.errors && typeof err.errors === "object") {
+            messages = Object.values(err.errors).map(e => e.message);
+        } else if (err.message) {
+            messages.push(err.message);
         }
-        // j'appel ma fonction pour ajouter un message d'erreur à la session
+
         addFlashMessage(req, { type: "danger", message: messages });
         res.status(422).redirect("/");
     }
